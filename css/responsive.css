@@ -22,7 +22,7 @@
   .mega-menu{ position:static; transform:none; width:100%; background:rgba(255,255,255,.04); box-shadow:none;
     opacity:1; visibility:visible; pointer-events:auto; grid-template-columns:1fr; max-height:0; overflow:hidden; padding:0 4px; }
   .nav-menu > li.mega-open .mega-menu{ max-height:600px; padding:10px 4px 20px; }
-  .mega-menu a{ color:var(--white); }
+  .mega-menu a{ color:var(--white); padding: 12px 8px; display: block; border-radius: 4px; }
   .mega-menu a:hover{ background:rgba(255,255,255,.06); }
   .nav-toggle{ display:flex; }
   .nav-toggle.active span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
@@ -48,18 +48,21 @@
 
 /* Mobile */
 @media (max-width:640px){
-  .section-pad{ padding:72px 0; }
-  .hero h1{ font-size:clamp(30px,9vw,44px); }
+  .container { padding: 0 16px; }
+  .section-pad{ padding:60px 0; }
+  .section-head h2 { font-size: clamp(26px, 7vw, 32px); }
+  p { font-size: 15px; }
+  .hero h1{ font-size:clamp(28px, 8vw, 36px); }
   .hero-sub .dot{ display:block; height:0; }
   .hero-actions .btn{ width:100%; }
   .hero-actions{ flex-direction:column; }
-  .mvv-grid{ grid-template-columns:1fr; }
-  .services-grid{ grid-template-columns:1fr; }
+  .mvv-grid{ grid-template-columns:1fr; gap: 24px; }
+  .services-grid{ grid-template-columns:1fr; gap: 20px; }
   .logo-grid{ grid-template-columns:repeat(2,1fr); }
-  .projects-grid{ grid-template-columns:1fr; }
-  .success-grid{ grid-template-columns:1fr; }
-  .why-grid{ grid-template-columns:1fr; }
-  .founder-card{ flex-direction:column; text-align:center; align-items:center; padding:34px 26px; }
+  .projects-grid{ grid-template-columns:1fr; gap: 24px; }
+  .success-grid{ grid-template-columns:1fr; gap: 24px; }
+  .why-grid{ grid-template-columns:1fr; gap: 24px; }
+  .founder-card{ flex-direction:column; text-align:center; align-items:center; padding:24px 16px; }
   .founder-tags{ justify-content:center; }
   .footer-grid{ grid-template-columns:1fr; gap:34px; }
   .footer-bottom{ flex-direction:column; text-align:center; }
@@ -68,7 +71,7 @@
   .newsletter{ flex-direction:column; text-align:center; padding:40px 28px; }
   .newsletter-form{ width:100%; justify-content:center; }
   .newsletter-form input{ min-width:unset; flex:1; }
-  .contact-form-card, .contact-info-card{ padding:30px 24px; }
+  .contact-form-card, .contact-info-card{ padding:24px 16px; }
   .modal-body{ padding:26px; }
   .cookie-banner{ flex-direction:column; align-items:flex-start; left:16px; right:16px; bottom:16px; }
   .clients-tabs{ flex-wrap:wrap; }
