@@ -48,6 +48,16 @@ document.addEventListener('DOMContentLoaded', function () {
   navToggle.addEventListener('click', () => {
     navToggle.classList.toggle('active');
     navMenu.classList.toggle('active');
+    document.body.classList.toggle('nav-open', navMenu.classList.contains('active'));
+  });
+
+  // Close mobile nav on resize past breakpoint
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 992 && navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+      navToggle.classList.remove('active');
+      document.body.classList.remove('nav-open');
+    }
   });
 
   // Mobile mega-menu accordion open
@@ -68,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     a.addEventListener('click', () => {
       navMenu.classList.remove('active');
       navToggle.classList.remove('active');
+      document.body.classList.remove('nav-open');
     });
   });
 
@@ -293,10 +304,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }, { passive: true });
 
-  /* ---------- Simple hero parallax ---------- */
+  /* ---------- Simple hero parallax (disabled on mobile for performance) ---------- */
   const heroBg = document.querySelector('.hero-bg');
   if (heroBg) {
     window.addEventListener('scroll', () => {
+      if (window.innerWidth <= 768) return; // skip parallax on mobile
       const y = window.scrollY;
       if (y < window.innerHeight) heroBg.style.transform = `scale(1.08) translateY(${y * 0.25}px)`;
     }, { passive: true });

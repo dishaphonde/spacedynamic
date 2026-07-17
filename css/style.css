@@ -303,7 +303,10 @@ button{ font-family:var(--font-body); cursor:pointer; }
 }
 
 /* ===================== SERVICES ===================== */
-.services-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:22px; }
+/* About dual grid (Journey + MVV) */
+.about-dual-grid{ display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:start; }
+
+.services-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
 .service-card{
   background:var(--white); border:1px solid var(--gray-line); border-radius:var(--radius-md); padding:34px 24px;
   text-align:left; transition:.4s ease; position:relative;
