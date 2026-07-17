@@ -79,17 +79,15 @@
   /* --- About section --- */
   .founding-story { grid-template-columns: 1fr; gap: 44px; }
   .founding-story .story-media img { height: 380px; }
-  .about-dual-grid { grid-template-columns: 1fr; gap: 50px; }
 
-  /* --- MVV & Founders --- */
-  .mvv-grid { grid-template-columns: repeat(2, 1fr); }
+  /* --- Founders --- */
   .founders-grid { grid-template-columns: 1fr; }
 
   /* --- Services --- */
   .services-grid { grid-template-columns: repeat(2, 1fr); }
 
   /* --- Clients --- */
-  .logo-grid { grid-template-columns: repeat(3, 1fr); }
+  .logo-grid { grid-template-columns: repeat(5, 1fr); }
   .client-highlight { grid-template-columns: 1fr; }
 
   /* --- Projects --- */
@@ -119,8 +117,8 @@
 
 /* ========== SMALL TABLET (≤ 768px) ========== */
 @media (max-width: 768px) {
-  .section-pad { padding: 80px 0; }
-  .section-head { margin-bottom: 40px; }
+  .section-pad { padding: 60px 0; }
+  .section-head { margin-bottom: 30px; }
   .section-head h2 { font-size: clamp(24px, 6vw, 34px); }
 
   /* Hero refinements */
@@ -168,7 +166,7 @@
 /* ========== MOBILE (≤ 640px) ========== */
 @media (max-width: 640px) {
   .container { padding: 0 16px; }
-  .section-pad { padding: 60px 0; }
+  .section-pad { padding: 40px 0; }
   .section-head h2 { font-size: clamp(22px, 7vw, 30px); }
   p { font-size: 15px; line-height: 1.7; }
 
@@ -201,8 +199,6 @@
   .story-tag { bottom: 16px; left: 16px; padding: 10px 14px; font-size: 12px; }
   .story-tag strong { font-size: 17px; }
 
-  .about-dual-grid { gap: 40px; }
-
   /* Timeline */
   .timeline-item { padding-left: 48px; margin-bottom: 24px; }
   .timeline-dot { width: 24px; height: 24px; font-size: 11px; left: 8px; }
@@ -210,10 +206,6 @@
   .timeline-item h4 { font-size: 14.5px; }
   .timeline-item p { font-size: 13.5px; }
   .timeline-year { font-size: 11px; padding: 2px 8px; }
-
-  /* MVV cards */
-  .mvv-grid { grid-template-columns: 1fr; gap: 20px; }
-  .mvv-card { padding: 24px 20px !important; }
 
   /* Founders */
   .founders-grid { margin-top: 60px; gap: 24px; }
@@ -228,15 +220,26 @@
   .founder-tags { justify-content: center; }
 
   /* --- Services --- */
-  .services-grid { grid-template-columns: 1fr; gap: 16px; }
-  .service-card { padding: 24px 20px; }
+  .services-grid { grid-template-columns: 1fr; gap: 12px; }
+  .service-card {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    grid-template-rows: auto auto;
+    gap: 2px 14px;
+    padding: 16px;
+    align-items: center;
+  }
+  .service-icon { grid-column: 1; grid-row: 1 / span 2; margin: 0; width: 44px; height: 44px; border-radius: 10px; font-size: 16px; }
+  .service-card h3 { grid-column: 2; grid-row: 1; margin: 0; font-size: 14.5px; align-self: end; }
+  .service-card p { grid-column: 2; grid-row: 2; margin: 0; font-size: 12px; align-self: start; }
+  .service-card .num { position: absolute; top: 16px; right: 16px; font-size: 11px; }
 
   /* --- Clients --- */
   .clients-tabs { flex-wrap: wrap; gap: 8px; }
   .clients-tab { padding: 12px 20px; font-size: 13px; min-height: 44px; }
-  .logo-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .logo-card { height: 76px; min-height: 76px; padding: 8px; }
-  .logo-text-label { font-size: 11px; letter-spacing: 0.3px; }
+  .logo-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .logo-card { height: 50px; min-height: 50px; padding: 6px; }
+  .logo-text-label { font-size: 10px; letter-spacing: 0px; }
 
   .client-highlight { gap: 16px; }
   .highlight-card { padding: 22px 18px; gap: 14px; }
@@ -251,13 +254,20 @@
   .project-body h3 { font-size: 17px; }
 
   /* --- Success Stories --- */
-  .success-grid { grid-template-columns: 1fr; gap: 16px; }
-  .success-card { padding: 26px 20px; }
-  .success-icon { width: 46px; height: 46px; font-size: 18px; margin-bottom: 16px; }
-  .success-card h3 { font-size: 16px; }
-  .success-stat { font-size: 24px; margin: 10px 0 4px; }
-  .success-stat span { font-size: 13px; }
-  .success-card p { font-size: 13px; }
+  .success-grid { grid-template-columns: 1fr; gap: 12px; }
+  .success-card {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 4px 14px;
+    padding: 16px;
+    align-items: center;
+  }
+  .success-icon { grid-column: 1; grid-row: 1 / span 2; margin: 0; width: 44px; height: 44px; border-radius: 10px; font-size: 16px; }
+  .success-card h3 { grid-column: 2; grid-row: 1; margin: 0; font-size: 15px; align-self: end; }
+  .success-stat { grid-column: 2; grid-row: 2; margin: 0; font-size: 20px; align-self: start; display: flex; align-items: baseline; gap: 6px; }
+  .success-stat span { margin: 0; font-size: 11px; }
+  .success-card p { grid-column: 1 / span 2; grid-row: 3; margin-top: 8px; font-size: 12.5px; }
 
   /* --- Why Choose Us --- */
   .why-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -369,9 +379,9 @@
   .founder-card { padding: 22px 14px; }
 
   /* Section spacing */
-  .section-pad { padding: 48px 0; }
-  .founding-story { margin-bottom: 60px; }
-  .founders-grid { margin-top: 48px; }
+  .section-pad { padding: 32px 0; }
+  .founding-story { margin-bottom: 40px; }
+  .founders-grid { margin-top: 32px; }
 
   /* Newsletter */
   .newsletter { padding: 24px 16px; }

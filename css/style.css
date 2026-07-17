@@ -69,10 +69,10 @@ button{ font-family:var(--font-body); cursor:pointer; }
   color:var(--gold); margin-bottom:16px;
 }
 .eyebrow::before{ content:''; width:28px; height:2px; background:var(--gold); display:inline-block; }
-.section-head{ max-width:680px; margin-bottom:56px; }
+.section-head{ max-width:680px; margin-bottom:40px; }
 .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
 .section-head h2{ font-size:clamp(28px,4vw,42px); }
-.section-pad{ padding:110px 0; }
+.section-pad{ padding:80px 0; }
 .bg-navy{ background:var(--navy); color:var(--white); }
 .bg-navy h2, .bg-navy h3, .bg-navy h4{ color:var(--white); }
 .bg-gray{ background:var(--gray-bg); }
@@ -304,11 +304,11 @@ button{ font-family:var(--font-body); cursor:pointer; }
 
 /* ===================== SERVICES ===================== */
 /* About dual grid (Journey + MVV) */
-.about-dual-grid{ display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:start; }
+.about-dual-grid{ max-width: 800px; margin: 0 auto; }
 
-.services-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.services-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
 .service-card{
-  background:var(--white); border:1px solid var(--gray-line); border-radius:var(--radius-md); padding:34px 24px;
+  background:var(--white); border:1px solid var(--gray-line); border-radius:var(--radius-md); padding:26px 20px;
   text-align:left; transition:.4s ease; position:relative;
 }
 .service-card:hover{
@@ -334,10 +334,10 @@ button{ font-family:var(--font-body); cursor:pointer; }
 .clients-tab.active, .clients-tab:hover{ background:var(--navy); color:var(--white); border-color:var(--navy); }
 .clients-panel{ display:none; }
 .clients-panel.active{ display:block; }
-.logo-grid{ display:grid; grid-template-columns:repeat(6,1fr); gap:18px; }
+.logo-grid{ display:grid; grid-template-columns:repeat(8,1fr); gap:12px; }
 .logo-card{
   border:1px solid var(--gray-line); border-radius:var(--radius-sm);
-  height:100px; display:flex; align-items:center; justify-content:center; padding:14px; text-align:center;
+  height:60px; display:flex; align-items:center; justify-content:center; padding:8px; text-align:center;
   transition:.35s ease; position:relative;
 }
 .logo-card:not(.logo-img-card){ background:var(--white); }
@@ -416,14 +416,14 @@ button{ font-family:var(--font-body); cursor:pointer; }
 /* ===================== SUCCESS STORIES ===================== */
 .success-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
 .success-card{
-  background:var(--white); border-radius:var(--radius-lg); padding:34px; border:1px solid var(--gray-line);
+  background:var(--white); border-radius:var(--radius-md); padding:24px; border:1px solid var(--gray-line);
   transition:.4s ease;
 }
 .success-card:hover{ border-color:var(--gold); box-shadow:var(--shadow-soft); transform:translateY(-6px); }
-.success-icon{ width:54px; height:54px; border-radius:14px; background:var(--navy); color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:20px; margin-bottom:20px; }
-.success-card h3{ font-size:18px; }
+.success-icon{ width:48px; height:48px; border-radius:12px; background:var(--navy); color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:18px; margin-bottom:12px; }
+.success-card h3{ font-size:17px; margin:0; }
 .success-stat{
-  font-family:var(--font-display); font-size:30px; font-weight:700; color:var(--navy); margin:14px 0 6px;
+  font-family:var(--font-display); font-size:26px; font-weight:700; color:var(--navy); margin:8px 0 6px;
 }
 .success-stat span{ font-size:14px; color:var(--slate); font-weight:400; display:block; margin-top:4px; }
 .success-card p{ font-size:13.5px; margin:0; }
@@ -591,9 +591,9 @@ button{ font-family:var(--font-body); cursor:pointer; }
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80px;
-  border-radius: 10px;
-  padding: 12px;
+  min-height: 60px;
+  border-radius: 8px;
+  padding: 8px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.10);
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: default;
