@@ -129,7 +129,7 @@ button{ font-family:var(--font-body); cursor:pointer; }
   transition:background .35s ease, box-shadow .35s ease, height .35s ease;
 }
 .navbar.scrolled{
-  background:rgba(26,93,58,.96); box-shadow:0 10px 30px rgba(0,0,0,.25); height:72px;
+  background:rgba(255,255,255,1); box-shadow:0 4px 20px rgba(0,0,0,0.07); height:72px;
 }
 .navbar .container{ display:flex; align-items:center; justify-content:space-between; width:100%; }
 .brand{ display:flex; align-items:center; gap:10px; }
@@ -144,7 +144,7 @@ button{ font-family:var(--font-body); cursor:pointer; }
   display:flex; align-items:center; gap:6px; padding:14px 16px; font-size:14.5px; font-weight:500;
   color:var(--color-heading); font-family:var(--font-display); transition:color .25s ease;
 }
-.nav-menu > li > a:hover, .nav-menu > li.active > a{ color:var(--gold); }
+.nav-menu > li > a:hover, .nav-menu > li.active > a{ color:var(--color-accent); }
 .nav-menu > li > a i.fa-chevron-down{ font-size:10px; transition:transform .25s ease; }
 .nav-menu > li:hover > a i.fa-chevron-down{ transform:rotate(180deg); }
 
@@ -157,11 +157,11 @@ button{ font-family:var(--font-body); cursor:pointer; }
 }
 .nav-menu > li:hover .mega-menu{ opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); pointer-events:auto; }
 .mega-menu a{
-  display:flex; align-items:center; gap:12px; padding:11px 12px; border-radius:10px; color:var(--navy);
+  display:flex; align-items:center; gap:12px; padding:11px 12px; border-radius:10px; color:var(--color-heading);
   font-size:14px; font-weight:500; transition:.25s ease;
 }
-.mega-menu a:hover{ background:var(--gray-bg); color:var(--gold); padding-left:16px; }
-.mega-menu a i{ color:var(--gold); font-size:15px; width:18px; text-align:center; }
+.mega-menu a:hover{ background:var(--color-bg-soft); color:var(--color-accent); padding-left:16px; }
+.mega-menu a i{ color:var(--color-accent); font-size:15px; width:18px; text-align:center; }
 
 .nav-cta{ display:flex; align-items:center; gap:14px; }
 .nav-search-btn, .nav-toggle{
@@ -169,33 +169,33 @@ button{ font-family:var(--font-body); cursor:pointer; }
   background:transparent; color:var(--color-heading); display:flex; align-items:center; justify-content:center;
   font-size:15px; transition:.25s ease;
 }
-.nav-search-btn:hover{ background:var(--gold); color:var(--navy); border-color:var(--gold); }
+.nav-search-btn:hover{ background:var(--color-bg-soft); color:var(--color-accent); border-color:var(--color-accent); }
 .nav-toggle{ display:none; flex-direction:column; gap:5px; border:none; }
-.nav-toggle span{ width:22px; height:2px; background:var(--white); border-radius:2px; transition:.3s ease; }
+.nav-toggle span{ width:22px; height:2px; background:var(--color-heading); border-radius:2px; transition:.3s ease; }
 .mobile-close-li { display: none; }
 
 /* Search overlay */
 .search-overlay{
-  position:fixed; inset:0; background:rgba(26,93,58,.97); z-index:2000;
+  position:fixed; inset:0; background:rgba(255,255,255,0.97); z-index:2000;
   display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:.35s ease;
 }
 .search-overlay.active{ opacity:1; visibility:visible; }
 .search-overlay-inner{ width:min(680px,90%); text-align:center; }
 .search-overlay input{
-  width:100%; background:transparent; border:none; border-bottom:2px solid var(--gold);
-  font-family:var(--font-display); font-size:clamp(24px,4vw,40px); color:var(--white); text-align:center;
+  width:100%; background:transparent; border:none; border-bottom:2px solid var(--color-accent);
+  font-family:var(--font-display); font-size:clamp(24px,4vw,40px); color:var(--color-heading); text-align:center;
   padding:16px 0; outline:none;
 }
-.search-overlay input::placeholder{ color:rgba(255,255,255,.35); }
+.search-overlay input::placeholder{ color:var(--color-text); }
 .search-close{
   position:absolute; top:32px; right:32px; width:48px; height:48px; border-radius:50%;
-  border:1px solid rgba(255,255,255,.3); background:none; color:var(--white); font-size:18px;
+  border:1px solid var(--color-border); background:none; color:var(--color-heading); font-size:18px;
 }
 
 /* ===================== HERO ===================== */
 .hero{
   position:relative; min-height:100vh; display:flex; align-items:center;
-  overflow:hidden; background:var(--navy);
+  overflow:hidden; background:var(--color-bg);
 }
 .hero-bg{
   position:absolute; inset:0; background-size:cover; background-position:center;
