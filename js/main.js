@@ -336,3 +336,49 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+/* ==========================================================================
+   CLIENTS FILTER — global function called by inline onclick
+   ========================================================================== */
+function filterClients(category, clickedBtn) {
+  // Update active button
+  document.querySelectorAll('.clients-filter-btn').forEach(btn => btn.classList.remove('active'));
+  clickedBtn.classList.add('active');
+  const blockCorporate = document.getElementById('block-corporate');
+  const blockRetail    = document.getElementById('block-retail');
+  const divider        = document.getElementById('section-divider-retail');
+  const logoCards      = document.querySelectorAll('.logo-card-new');
+
+  const show = (el) => {
+    el.classList.remove('hidden');
+    el.style.animation = 'fadeSlideIn .45s ease forwards';
+  };
+  const hide = (el) => {
+    el.classList.add('hidden');
+    el.style.animation = '';
+  };
+
+  if (category === 'all') {
+    logoCards.forEach(card => show(card));
+    if (blockCorporate) blockCorporate.classList.remove('hidden');
+    if (blockRetail) blockRetail.classList.remove('hidden');
+    if (divider) divider.classList.remove('hidden');
+  } else {
+    // Show only cards matching the selected category
+    logoCards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      if (cat === category) show(card);
+      else hide(card);
+    });
+
+    // If a category has no visible logos, hide its block wrapper
+    const corporateVisible = Array.from(document.querySelectorAll('#block-corporate .logo-card-new')).some(c => !c.classList.contains('hidden'));
+    const retailVisible = Array.from(document.querySelectorAll('#block-retail .logo-card-new')).some(c => !c.classList.contains('hidden'));
+
+    if (blockCorporate) corporateVisible ? blockCorporate.classList.remove('hidden') : blockCorporate.classList.add('hidden');
+    if (blockRetail) retailVisible ? blockRetail.classList.remove('hidden') : blockRetail.classList.add('hidden');
+
+    if (divider) divider.classList.add('hidden');
+  }
+}
+
