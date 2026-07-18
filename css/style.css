@@ -164,6 +164,7 @@ button{ font-family:var(--font-body); cursor:pointer; }
 .nav-search-btn:hover{ background:var(--gold); color:var(--navy); border-color:var(--gold); }
 .nav-toggle{ display:none; flex-direction:column; gap:5px; border:none; }
 .nav-toggle span{ width:22px; height:2px; background:var(--white); border-radius:2px; transition:.3s ease; }
+.mobile-close-li { display: none; }
 
 /* Search overlay */
 .search-overlay{

@@ -45,11 +45,21 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ---------- Mobile nav toggle ---------- */
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
+  const mobileNavClose = document.getElementById('mobileNavClose');
+  
   navToggle.addEventListener('click', () => {
     navToggle.classList.toggle('active');
     navMenu.classList.toggle('active');
     document.body.classList.toggle('nav-open', navMenu.classList.contains('active'));
   });
+
+  if(mobileNavClose) {
+    mobileNavClose.addEventListener('click', () => {
+      navToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.classList.remove('nav-open');
+    });
+  }
 
   // Close mobile nav on resize past breakpoint
   window.addEventListener('resize', () => {

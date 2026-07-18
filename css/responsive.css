@@ -36,6 +36,10 @@
     min-height: 56px; /* touch target */
   }
 
+  .mobile-close-li { display: block !important; width: 100% !important; border-bottom: none !important; margin-bottom: 20px; text-align: right; }
+  .mobile-nav-close { background: none; border: none; color: var(--gold); font-size: 24px; cursor: pointer; padding: 10px; display: inline-flex; align-items: center; justify-content: center; }
+
+
   /* Mega menu accordion on mobile */
   .mega-menu {
     position: static; transform: none; width: 100%;
