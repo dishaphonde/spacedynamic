@@ -91,7 +91,7 @@
   .services-grid { grid-template-columns: repeat(2, 1fr); }
 
   /* --- Clients --- */
-  .logo-grid { grid-template-columns: repeat(5, 1fr); }
+  .logo-grid { grid-template-columns: repeat(4, 1fr); }
   .client-highlight { grid-template-columns: 1fr; }
 
   /* --- Projects --- */
