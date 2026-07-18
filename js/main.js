@@ -203,7 +203,8 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
   /* ---------- FAQ accordion ---------- */
-  document.querySelectorAll('.faq-item').forEach(item => {
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     const answer = item.querySelector('.faq-answer');
     question.addEventListener('click', () => {
@@ -218,6 +219,16 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  // Open the first FAQ by default
+  if (faqItems.length > 0) {
+    // Wait for a brief moment to ensure DOM/fonts are ready for scrollHeight calculation
+    setTimeout(() => {
+      faqItems[0].classList.add('open');
+      const firstAnswer = faqItems[0].querySelector('.faq-answer');
+      firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
+    }, 100);
+  }
 
   /* ---------- Testimonials — Swiper ---------- */
   if (window.Swiper) {
