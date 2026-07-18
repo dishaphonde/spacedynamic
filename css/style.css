@@ -726,28 +726,30 @@ button{ font-family:var(--font-body); cursor:pointer; }
 }
 
 @media (max-width: 600px) {
-  .clients-stats-bar { padding:14px; display:flex; flex-direction:column; gap:12px; align-items:center; }
-  .cstat { padding:8px 6px; }
+  /* Compact stats */
+  .clients-stats-bar { padding:10px; display:flex; flex-direction:column; gap:8px; align-items:center; border-radius:10px; }
+  .cstat { padding:6px 4px; }
+  .cstat-num { font-size:1.4rem; }
 
-  .clients-filter-wrap { gap:8px; padding:0 12px; }
-  .clients-filter-btn { padding:10px 12px; font-size:13px; flex:1 1 48%; min-width:120px; }
+  /* Compact filter buttons — two per row */
+  .clients-filter-wrap { gap:8px; padding:6px 12px; display:flex; flex-wrap:wrap; justify-content:center; }
+  .clients-filter-btn { padding:8px 12px; font-size:13px; flex:1 1 46%; min-width:100px; border-radius:28px; }
+  .filter-badge { padding:2px 6px; font-size:11px; }
 
-  .clients-category-block { padding:18px; }
-  .clients-category-header { gap:12px; padding-bottom:18px; }
-  .cat-icon-wrap { width:48px; height:48px; font-size:18px; }
-  .cat-title { font-size:16px; }
+  /* Tighten category header and block paddings */
+  .clients-category-block { padding:12px; }
+  .clients-category-header { gap:10px; padding-bottom:12px; }
+  .cat-icon-wrap { width:44px; height:44px; font-size:16px; }
+  .cat-title { font-size:15px; }
 
-  .logo-grid-new { grid-template-columns: repeat(2, 1fr); gap:8px; }
-  /* make logo cards align vertically with image above label */
-  .logo-card-new { height:auto; padding:10px 8px; }
-  .logo-card-new { display:flex; flex-direction:column; gap:8px; align-items:center; justify-content:center; }
-  .logo-card-new img { max-height:46px; width:auto; margin:0 auto; }
-  .logo-card-new span { display:block; font-size:12px; color:var(--navy); text-align:center; white-space:normal; word-break:break-word; }
-
-  /* make grid adapt to available width and keep cards consistent */
-  .logo-grid-new { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap:10px; }
+  /* Denser logo grid: responsive columns, smaller cards */
+  .logo-grid-new { grid-template-columns: repeat(auto-fit, minmax(92px, 1fr)); gap:8px; }
+  .logo-card-new { height:auto; padding:6px 6px; border-radius:8px; }
+  .logo-card-new { display:flex; flex-direction:column; gap:6px; align-items:center; justify-content:center; }
+  .logo-card-new img { max-height:36px; width:auto; }
+  .logo-card-new span { display:block; font-size:11px; color:var(--navy); text-align:center; white-space:normal; word-break:break-word; }
 
   .clients-section-divider { display:none; }
-  .client-highlight { grid-template-columns:1fr; gap:12px; }
-  .highlight-card { padding:18px; }
+  .client-highlight { grid-template-columns:1fr; gap:10px; }
+  .highlight-card { padding:12px; }
 }
