@@ -726,10 +726,15 @@ button{ font-family:var(--font-body); cursor:pointer; }
 }
 
 @media (max-width: 600px) {
-  /* Compact stats */
-  .clients-stats-bar { padding:10px; display:flex; flex-direction:column; gap:8px; align-items:center; border-radius:10px; }
-  .cstat { padding:6px 4px; }
-  .cstat-num { font-size:1.4rem; }
+  /* Compact stats: grid layout for tighter, aligned mobile view */
+  .clients-stats-bar {
+    padding:8px; display:grid; grid-template-columns:repeat(2,1fr); gap:8px; align-items:center;
+    border-radius:10px; max-width:100%; box-shadow:none;
+  }
+  .cstat { padding:8px 6px; text-align:center; }
+  .cstat-num { font-size:1.25rem; line-height:1; }
+  .cstat-label { font-size:11px; letter-spacing:.06em; margin-top:6px; }
+  .cstat-divider { display:none; }
 
   /* Compact filter buttons — two per row */
   .clients-filter-wrap { gap:8px; padding:6px 12px; display:flex; flex-wrap:wrap; justify-content:center; }
